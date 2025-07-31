@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="index.css" />
+  <title>سامانه معاملات ملکی</title>
+</head>
+<body>
+  <header>
+    <h1>سامانه خرید و فروش و اجاره ملک</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">صفحه اصلی</a>
+    <a href="sell.html">فروش</a>
+    <a href="rent.html">اجاره</a>
+    <a href="us.html">درباره ما</a>
+    <a href="user.html">ورود کاربر</a>
+  </nav>
+
+  <main>
+    <!-- 🔍 جستجو -->
+    <div class="search-wrapper">
+      <h2>جستجوی ملک در مناطق محبوب</h2>
+      <div class="search-bar-advanced">
+        <select id="areaSelect">
+          <option value="">انتخاب محدوده</option>
+          <option value="کوی مهر">کوی مهر</option>
+          <option value="مهرشهر فاز یک">مهرشهر فاز یک</option>
+          <option value="مهرشهر فاز دو">مهرشهر فاز دو</option>
+          <option value="مهرشهر فاز سه">مهرشهر فاز سه</option>
+          <option value="بلوار ارم">بلوار ارم</option>
+        </select>
+        <input type="text" id="customSearch" placeholder="جستجو بر اساس قیمت منطقه..." />
+        <button id="searchBtn">🔍 جستجو</button>
+      </div>
+    </div>
+
+    <!-- 🖼 اسلایدر -->
+    <div class="slider-container">
+      <img id="sliderImage" src="images/house1.jpg" alt="ملک" />
+    </div>
+
+    <!-- 📘 مقاله -->
+    <div class="info-section">
+      <div class="info-box article-box">
+        <section class="scroll-article">
+          <h2>تاریخچه مهرشهر کرج و میراث پهلوی</h2>
+          <div class="scroll-content">
+            <article>
+              <h3>📍 مهرشهر کجاست؟</h3>
+              <p>مهرشهر کرج یکی از مناطق خوش‌آب‌وهوای جنوب‌غربی کرج است...</p>
+
+              <h3>🏰 کاخ شمس پهلوی</h3>
+              <p>این کاخ بین سال‌های ۱۳۴۵ تا ۱۳۴۷ ساخته شد...</p>
+
+              <h3>🍏 باغ سیب و تأثیر اکولوژیک</h3>
+              <p>رطوبت طبیعی، تعدیل دما و کاهش آلودگی...</p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 سامانه معاملات ملکی - تمامی حقوق محفوظ است</p>
+  </footer>
+
+  <script src="index.js"></script>
+</body>
+</html>

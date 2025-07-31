@@ -1,0 +1,75 @@
+user.css
+------------------------------------
+body {
+  margin: 0;
+  font-family: "Vazir", sans-serif;
+  background: radial-gradient(circle at top, #e0f7fa, #fce4ec);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 320px;
+  max-width: 90vw;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+  border: 2px dashed #90caf9;
+  text-align: center;
+}
+
+.login-container h2 {
+  color: #1976d2;
+  margin-bottom: 25px;
+}
+
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+.login-container input:focus {
+  border-color: #1976d2;
+  outline: none;
+}
+
+.login-container button {
+  background-color: #1976d2;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-container button:hover {
+  background-color: #1565c0;
+}
+
+/* ریسپانسیو برای موبایل */
+@media (max-width: 500px) {
+  .login-container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .login-container input,
+  .login-container button {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,337 @@
+/* طراحی پایه صفحه */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f9ff;
+  color: #333;
+  line-height: 1.6;
+  direction: rtl;
+}
+
+/* Header */
+header {
+  background-color: #4fa7ff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #ffbe3b;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1f1f1f;
+  margin: 10px;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #ffe37c;
+  transform: scale(1.05);
+}
+
+/* محتوا */
+.content {
+  padding: 20px;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 24px;
+  color: #2f80ed;
+}
+
+.content p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #4fa7ff; /* رنگ هماهنگ با header */
+  color: #fff;
+  text-align: center;
+  padding: 15px 20px;
+  font-size: 16px;
+  direction: rtl;
+  border-top: 2px solid #555;
+  width: 100%;
+  margin-top: 40px;
+}
+
+
+/* واکنش‌گرایی کلی */
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-bar-advanced {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .slider-container img {
+    width: 100%;
+    height: auto;
+  }
+
+  .info-section {
+    padding: 10px;
+  }
+
+  footer p {
+    font-size: 14px;
+    text-align: center;
+    padding: 8px;
+  }
+}
+
+/* واکنش‌گرایی برای موبایل‌های کوچکتر */
+@media screen and (max-width: 600px) {
+  nav a {
+    font-size: 16px;
+    width: 90%;
+  }
+
+  .content h2 {
+    font-size: 20px;
+  }
+
+  .content p {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .info-box {
+    flex: 1 1 100%;
+  }
+
+  .info-box h3 {
+    font-size: 18px;
+  }
+
+  .info-box p {
+    font-size: 15px;
+  }
+
+  .scroll-article h2 {
+    font-size: 20px;
+  }
+
+  .scroll-content article h3 {
+    font-size: 18px;
+  }
+
+  .scroll-content article p {
+    font-size: 15px;
+  }
+
+  footer p {
+    font-size: 12px;
+  }
+}
+
+/* اسلایدر */
+.slider-container {
+  width: 400px;
+  height: 300px;
+  margin: 30px auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.slider-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 1s ease;
+}
+
+/* باکس جستجو */
+.search-wrapper {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #fceabb 0%, #f8b500 100%);
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  animation: fadeSearch 0.8s ease-in;
+}
+
+.search-wrapper h2 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.search-bar-advanced {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+.search-bar-advanced select,
+.search-bar-advanced input {
+  padding: 12px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  width: 45%;
+  min-width: 200px;
+  outline: none;
+}
+
+.search-bar-advanced button {
+  background-color: #2ecc71;
+  color: white;
+  font-size: 18px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-bar-advanced button:hover {
+  background-color: #27ae60;
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 500px) {
+  .search-bar-advanced input,
+  .search-bar-advanced select {
+    width: 100%;
+  }
+
+  .search-wrapper h2 {
+    font-size: 20px;
+  }
+}
+
+@keyframes fadeSearch {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* بخش مقاله */
+.info-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 30px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.info-box {
+  flex: 1 1 45%;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.info-box:hover {
+  transform: translateY(-5px);
+}
+
+.info-box h3 {
+  font-size: 20px;
+  color: #f39c12;
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* مقاله مهرشهر */
+.scroll-article {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border-left: 6px solid #f39c12;
+}
+
+.scroll-article h2 {
+  color: #2c3e50;
+  font-size: 24px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.scroll-content {
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 10px;
+  scroll-behavior: smooth;
+}
+
+.scroll-content article h3 {
+  font-size: 20px;
+  margin-top: 20px;
+  color: #f39c12;
+}
+
+.scroll-content article p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #444;
+}
+
+.scroll-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scroll-content::-webkit-scrollbar-thumb {
+  background-color: #f39c12;
+  border-radius: 3px;
+}
+
+/* کارت املاک در حالت موبایل */
+@media (max-width: 768px) {
+  #estateList {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .estate-card {
+    width: 90%;
+  }
+}

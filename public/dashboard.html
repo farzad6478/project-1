@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8" />
+  <title>داشبورد مدیریت | سامانه معاملات ملکی</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="user.css">
+  <link rel="stylesheet" href="fonts/Vazir.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <header>
+    <h1>🎯 داشبورد مدیریت</h1>
+  </header>
+
+  <nav>
+    <a href="index.html">صفحه اصلی</a>
+    <a href="user.html">خروج</a>
+  </nav>
+
+  <main>
+    <h2>ثبت ملک جدید</h2>
+    <form id="estateForm">
+      <input type="text" id="title" placeholder="عنوان ملک" required />
+      <input type="text" id="location" placeholder="موقعیت ملک" required />
+      <input type="number" id="price" placeholder="قیمت (تومان)" required />
+      <textarea id="description" placeholder="توضیحات"></textarea>
+      <button type="submit">📤 ثبت ملک</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 سامانه معاملات ملکی</p>
+  </footer>
+
+  <!-- 🔗 این خط بسیار مهمه برای وصل شدن dashboard.js -->
+  <script src="dashboard.js"></script>
+  <script src="estate.js"></script>
+
+</body>
+</html>

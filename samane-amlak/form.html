@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <title>فرم ثبت اطلاعات ملک</title>
+  <style>
+    body { font-family: Vazir, Tahoma, sans-serif; padding: 30px; direction: rtl; }
+    label { font-weight: bold; }
+    input, textarea, select { width: 100%; padding: 8px; margin-top: 5px; margin-bottom: 15px; }
+    button { padding: 10px 20px; font-size: 16px; cursor: pointer; }
+  </style>
+</head>
+<body>
+ <form id="estateForm">
+  <label>عنوان ملک:</label>
+  <input type="text" name="title" placeholder="مثلا:فروش"><br>
+
+  <label>موقعیت ملک:</label>
+  <input type="text" name="location" placeholder="مثلاً: مهرشهر فاز یک"><br>
+
+  <label>متراژ واحد</label>
+  <input type="text" name="Meterage" placeholder="مثلاً: مهرشهر فاز یک"><br>
+
+
+  <!-- <label>سال ساخت:</label>
+  <input type="text" name="yearBuilt" placeholder="مثلاً: 1398"><br>
+
+  <label>طبقه:</label>
+  <input type="text" name="floor" placeholder="مثلاً: 3"><br>
+
+  <label>تعداد خواب:</label>
+  <input type="text" name="bedrooms" placeholder="مثلاً: 2"><br>
+
+  <label>جهت ملک:</label>
+  <input type="text" name="directionOne" placeholder="مثلاً: جنوبی"><br>
+
+  <label>جهت واحد:</label>
+  <input type="text" name="directionTwo" placeholder="مثلاً: جنوبی"><br>
+
+  <label>تعداد واحد در ساختمان:</label>
+  <input type="text" name="unitsCount" placeholder="مثلاً: 10"><br>
+
+  <label>قیمت (تومان):</label>
+  <input type="text" name="price" placeholder="مثلاً: 7500000000"><br> -->
+
+  <label>توضیحات بیشتر:</label>
+  <textarea name="description" placeholder="مثلا:مشاعات آبی"></textarea><br>
+
+  <button type="submit">📤 ارسال اطلاعات</button>
+</form>
+
+  <script>
+  document.getElementById('estateForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // جلوگیری از ریفرش فرم
+
+    const formData = new FormData(this);
+    const estateData = {};
+
+    formData.forEach((value, key) => {
+      estateData[key] = value;
+    });
+
+    fetch('http://localhost:3000/add-estate', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(estateData)
+})
+
+    .then(response => {
+      if (response.ok) {
+        alert('✅ اطلاعات با موفقیت ثبت شد!');
+        document.getElementById('estateForm').reset();
+      } else {
+        alert('❌ مشکلی در ثبت اطلاعات پیش آمد.');
+      }
+    })
+    .catch(error => {
+      console.error('❌ خطا:', error);
+      alert('❌ ارتباط با سرور برقرار نشد.');
+    });
+  });
+</script>
+
+</body>
+</html>
