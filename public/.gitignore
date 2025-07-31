@@ -1,0 +1,3 @@
+git add .gitignore
+git commit -m "Move .gitignore to root directory"
+git push
